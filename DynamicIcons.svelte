@@ -1,5 +1,5 @@
 <script>
-  import { createEventDispatcher, onMount } from "svelte";
+  import { onMount } from "svelte";
 
   // imports
   //   import sun from "~/icons/theme/sun.svg";
@@ -12,9 +12,6 @@
   let classname = "";
   export { classname as class };
 
-  const dispatch = createEventDispatcher();
-
-  const OnClick = () => dispatch("click");
 
   onMount(() => {
     const realPath = `${BASE}/${path}.svg`;
@@ -30,7 +27,7 @@
   <button
     style="min-width: 18px; min-height: 18px"
     class="icon {classname}"
-    on:click={OnClick}
+    on:click
   >
     {@html svgRaw}
   </button>
