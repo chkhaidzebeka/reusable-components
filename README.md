@@ -1,2 +1,1 @@
-# svelte-components
-re-usable svelte components
+# vue/svelte reusable components
