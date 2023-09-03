@@ -38,7 +38,7 @@ const isExactActive = computed(() => {
   const currentRoutePath = route.path;
 
   const currentLink = router.resolve(attrs.to as RouteLocationRaw);
-  const { query: linkQuery = {}, path: linkRuoutePath } = currentLink;
+  const { query: linkQuery = {}, path: linkRoutePath } = currentLink;
 
   const filteredRouteQuery = filterQuery(routeQuery);
   const filteredLinkQuery = filterQuery(linkQuery);
@@ -46,7 +46,7 @@ const isExactActive = computed(() => {
   const queryMatches =
     JSON.stringify(filteredRouteQuery) === JSON.stringify(filteredLinkQuery);
 
-  const routeMatches = currentRoutePath === linkRuoutePath;
+  const routeMatches = currentRoutePath === linkRoutePath;
   const isExactMatch = routeMatches && queryMatches;
 
   return isExactMatch;
